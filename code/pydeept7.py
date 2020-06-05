@@ -78,24 +78,17 @@ def voting(peptide_predict_file,nucleotide_predict_file,effector_train,noneffect
     from sklearn import svm
     from sklearn.model_selection import StratifiedKFold
     from sklearn.pipeline import Pipeline
-    from sklearn.naive_bayes import BernoulliNB, MultinomialNB, GaussianNB
-    from sklearn.tree import DecisionTreeClassifier
-    from sklearn.neighbors import KNeighborsClassifier
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.feature_selection import SelectKBest, chi2 
     from random import shuffle
-    from sklearn.preprocessing import LabelEncoder
     from sklearn.model_selection import train_test_split, cross_val_score
     f=random.seed()
     from sklearn.metrics import classification_report
     import matplotlib.pyplot as plt
     from sklearn.metrics import accuracy_score
-    from imblearn.under_sampling import NearMiss
     from sklearn.metrics import roc_curve, auc
     from keras.layers.normalization import BatchNormalization
     from keras.layers.advanced_activations import LeakyReLU
     from keras.models import Sequential
-    from keras.layers import Dense, Dropout, Activation, Flatten, Conv1D, MaxPooling1D 
+    from keras.layers import Dense, Dropout
     from keras.utils import np_utils
     from sklearn.feature_selection import VarianceThreshold
     from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -103,16 +96,10 @@ def voting(peptide_predict_file,nucleotide_predict_file,effector_train,noneffect
     from keras.layers import Dense
     from imblearn.over_sampling import SMOTE, ADASYN
     from collections import Counter
-    from sklearn.ensemble import ExtraTreesClassifier, AdaBoostClassifier
     import warnings
-    from sklearn.feature_selection import RFE
-    from sklearn.linear_model import LogisticRegression
     warnings.filterwarnings("ignore")
     from sklearn.metrics import confusion_matrix, classification_report, precision_score, recall_score, f1_score, cohen_kappa_score
     from keras.models import model_from_json
-    #from imblearn.ensemble import BaggingClassifier
-    from sklearn.tree import DecisionTreeClassifier
-    from sklearn.manifold import TSNE
     from sklearn.preprocessing import label_binarize
     from sklearn.multiclass import OneVsRestClassifier
     from scipy import interp
@@ -120,17 +107,12 @@ def voting(peptide_predict_file,nucleotide_predict_file,effector_train,noneffect
     import pickle
     from joblib import dump, load
     from sklearn.linear_model import LinearRegression
-    from sklearn.feature_selection import VarianceThreshold
-    from sklearn.feature_selection import SelectFromModel
-    from sklearn.feature_selection import GenericUnivariateSelect, SelectPercentile, f_regression, f_classif, mutual_info_regression, mutual_info_classif, chi2, SelectFdr, SelectFpr, SelectFwe
-    from keras.wrappers.scikit_learn import KerasClassifier
     from sklearn.metrics import f1_score
     from keras.layers import Input, Embedding, LSTM, Dense, SimpleRNN
     from sklearn import metrics
     from keras import metrics
     from keras import backend as K
     import time
-    from sklearn.svm import NuSVC, SVR, NuSVR, LinearSVR, OneClassSVM
     start_time = time.clock()
     f=random.seed()
     warnings.filterwarnings("ignore", category=DeprecationWarning)
